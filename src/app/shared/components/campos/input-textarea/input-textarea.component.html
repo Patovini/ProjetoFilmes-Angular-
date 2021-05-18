@@ -1,0 +1,13 @@
+
+<div [formGroup]="formGroup"> 
+  <mat-form-field class="full-width">
+    <textarea matInput 
+           [placeholder]="titulo" 
+           [name]="controlName" 
+           [formControlName]="controlName">
+    </textarea>       
+    <mat-error *ngIf ="validacao.hasErrorValidar(formControl,'required')">"Campo Obrigatorio"</mat-error>
+    <mat-error *ngIf ="validacao.hasErrorValidar(formControl,'minlength')">"Campo precisa ter mais que 2 palavaras"</mat-error>
+    <mat-error *ngIf ="validacao.hasErrorValidar(formControl,'maxlength')">"Campo precisa ter menos que 256 palavras"</mat-error>
+  </mat-form-field>
+</div>
